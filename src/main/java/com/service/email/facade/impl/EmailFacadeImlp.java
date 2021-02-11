@@ -20,7 +20,7 @@ public class EmailFacadeImlp implements EmailFacade {
     @Override
     public boolean sendEmail(EmailModel emailModel) {
         EmailDto emailDto = map.map(emailModel, EmailDto.class);
-        emailService.sendSimpleMessage(emailDto); 
+        emailService.sendSimpleMessage(emailDto);
         return true;
     }
 }
