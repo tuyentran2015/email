@@ -18,9 +18,9 @@ public class EmailFacadeImlp implements EmailFacade {
 
     private final ModelMapper map = new ModelMapper();
     @Override
-    public String sendEmail(EmailModel emailModel) {
+    public boolean sendEmail(EmailModel emailModel) {
         EmailDto emailDto = map.map(emailModel, EmailDto.class);
         emailService.sendSimpleMessage(emailDto);
-        return "send email";
+        return true;
     }
 }
